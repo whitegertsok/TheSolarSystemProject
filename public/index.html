@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetary system</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        .button-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            display: flex;
+            align-items: center; 
+        }
+        button {
+            width: 150px;
+            height: 50px;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #planetInfo {
+            position: absolute;
+            top: 250px; 
+            left: 10px;
+            display: none;
+            width: 200px;
+            min-height: 200px;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+        }
+        #planetInfo img {
+            max-width: 200%;
+            max-height: 800px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+    </style>
+    <link rel="icon" href="/earth.png" type="image/png">
+</head>
+
+<body>
+    <canvas id="renderCanvas" style="margin: 0; width: 100%; height: 100vh;"></canvas>
+
+    <div class="button-container">
+        
+        <div id="planetInfo" >
+            <!-- Кнопка закрытия с изображением (сохраняет позицию right: -190px) -->
+            <div style="position: absolute; top: 5px; right: -185px; width: 15px; height: 15px; cursor: pointer;"
+                 onclick="hidePlanetInfo()">
+                <img src="textures/close-icon.png" alt="Close" 
+                     style="width: 100; height: 100; object-fit: contain;">
+            </div>
+            <img id="planetImage" src="" alt="Planet Image" >
+            <p id="planetDescription"></p>
+        </div>
+
+  
+        <button onclick="moveToPlanet('earth')">
+            <img src="textures/earth-icon.png" alt="Earth" width="150" height="50">
+        </button>
+        <button onclick="moveToPlanet('mars')">
+            <img src="textures/mars-icon.png" alt="Mars" width="150" height="50">
+        </button>
+        <button onclick="moveToPlanet('jupiter')">
+            <img src="textures/jupiter-icon.png" alt="Jupiter" width="150" height="50">
+        </button>
+        <button onclick="moveToPlanet('mercury')">
+            <img src="textures/mercury-icon.png" alt="Mercury" width="150" height="50">
+        </button>
+        <button onclick="moveToPlanet('uranus')">
+            <img src="textures/uranus-icon.png" alt="Uranus" width="150" height="50">
+        </button>
+        <button onclick="moveToPlanet('venus')">
+            <img src="textures/venus-icon.png" alt="Venus" width="150" height="50">
+        </button>
+    </button>
+    <button onclick="moveToPlanet('neptune')">
+        <img src="textures/neptune-icon.png" alt="Neptune" width="150" height="50">
+    </button>
+        <button onclick="moveToPlanet('saturn')">
+            <img src="textures/saturn-icon.png" alt="Saturn" width="150" height="50">
+        </button>
+    </button>
+    <button onclick="moveToPlanet('sun')">
+        <img src="textures/sun-icon.png" alt="Sun" width="150" height="50">
+    </button>
+    <button onclick="moveToPlanet('moon')">
+        <img src="textures/moon-icon.png" alt="Moon" width="150" height="50">
+    </button>
+
+
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
